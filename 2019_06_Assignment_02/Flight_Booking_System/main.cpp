@@ -144,10 +144,30 @@ void displayTicket(string passangerNameP,
     cout << "*******************************************************************************************************\n";
     cout << "\t\t\tTravel Ticket for FLIGHT\n";
     cout << "*******************************************************************************************************\n";
-    cout << "\tName\t\t:\t" << passangerNameP << "\tTravel Ticket class \t:" << selectedClassP << endl;
-    cout << "\t\t\t\t\t\tSeat No\t\t:" << selectedSeatP<< endl;
+    cout << "Name\t\t:\t" << passangerNameP << "\tTravel Ticket class \t:" << selectedClassP << endl;
+    cout << "Seat No\t\t:\t" << selectedSeatP<< endl;
     cout << "Departure\t:\t" << TRAVELFROM << "\tDeparture Time \t\t:" << departureTimeP << endl;
-    cout << "\t\t\t\t\t\tSeat No\t\t:" << selectedSeatP<< endl;
+    cout << "Destination\t:\t" << TRAVELTO << "\tArrival Time\t\t:" << arrivalTimeP << endl;
+    cout << "*******************************************************************************************************\n";
+
+    if(selectedClassP == "Economy Class")
+        {
+            cout<<"Amount: R"<<ECONOMYCLASSFEE<<" Thank you for Booking with COS1511. Your travel agent is Maria"<<endl;
+    }
+    else if(selectedClassP == "First Class")
+    {
+            cout<<"Amount: R"<<FIRSTCLASSFEE<<" Thank you for Booking with COS1511.\nYour travel agent is Maria" << endl;
+    }
+    cout << "*******************************************************************************************************\n";
+}
+
+void displayTotalBookings(int totB7_00, int totB9_00, int totB11_00, int totB13_00, int totB15_00)
+{
+    cout << "\nNumber of bookings for 7:00 am: " << totB7_00 << endl;
+    cout << "Number of bookings for 9:00 am: " << totB9_00 << endl;
+    cout << "Number of bookings for 11:00 am: " << totB11_00 << endl;
+    cout << "Number of bookings for 13:00 am: " << totB13_00 << endl;
+    cout << "Number of bookings for 15:00 am: " << totB15_00 << endl;
 }
 
 int main()
@@ -223,6 +243,9 @@ int main()
         cout << "\nWould you like to make another Booking? (Y/N)" << endl;
         cin >> answer;
     } while (toupper(answer) == 'Y');
+
+    displayTotalBookings(tot700, tot900, tot1100, tot1300, tot1500);
+    cout << "Thank you for Doing Business with us..." << endl;
 
     return 0;
 }
